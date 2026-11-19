@@ -1,0 +1,92 @@
+/* AURA — tokens de design
+   Contrastes verificados (WCAG AA, texto normal ≥ 4.5:1):
+   claro  — texto #222A23 / bg #F7F5EF ≈ 13.6:1 · secundário #59645A / bg ≈ 5.7:1
+            primary #566B55 / bg ≈ 5.3:1 · branco / primary ≈ 5.8:1
+   escuro — texto #F3F2EB / bg #151D18 ≈ 15.4:1 · secundário #C0CBBE / surface ≈ 9.6:1
+            primary #B9D0B4 / bg ≈ 10.9:1
+   Accent (#B7A58B / #C9B79D) é usado apenas em elementos gráficos, nunca como cor de texto
+   sobre o fundo claro (≈ 2.2:1). Ajuste: accent-ink (#7A6A52) criado para texto de destaque no tema claro. */
+
+:root {
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Escala fluida — razão ~1.25 no corpo, contraste dramático no display */
+  --step--1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --step-1: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+  --step-2: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  --step-3: clamp(2rem, 1.6rem + 1.9vw, 3.25rem);
+  --step-4: clamp(2.25rem, 1.6rem + 3.4vw, 5rem);
+  --step-5: clamp(3.2rem, 2rem + 6vw, 8.4rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: clamp(4.5rem, 3rem + 7vw, 9rem);
+
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);
+  --col-gap: clamp(0.75rem, 2.2vw, 2rem);
+  --maxw: 1360px;
+
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 28px;
+  --radius-arch: 999px 999px 18px 18px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-theme: 480ms;
+
+  color-scheme: light;
+  --bg: #f7f5ef;
+  --surface: #ffffff;
+  --surface-alt: #eaede5;
+  --primary: #566b55;
+  --primary-hover: #40533f;
+  --on-primary: #ffffff;
+  --accent: #b7a58b;
+  --accent-ink: #7a6a52;
+  --text: #222a23;
+  --text-2: #59645a;
+  --border: #d9dfd5;
+  --border-strong: #b9c2b4;
+  --scrim: rgba(21, 29, 24, 0.62);
+  --shadow-float: 0 1px 0 rgba(34, 42, 35, 0.04), 0 12px 32px -18px rgba(34, 42, 35, 0.28);
+  --img-filter: saturate(0.88) contrast(0.98);
+
+  /* Seção imersiva (Rituais) — sempre profunda, em ambos os temas */
+  --deep-bg: #1b241e;
+  --deep-surface: #243028;
+  --deep-text: #f3f2eb;
+  --deep-text-2: #c0cbbe;
+  --deep-line: #3a4a3e;
+  --deep-accent: #c9b79d;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #151d18;
+  --surface: #202b23;
+  --surface-alt: #2a372e;
+  --primary: #b9d0b4;
+  --primary-hover: #d2e3cd;
+  --on-primary: #151d18;
+  --accent: #c9b79d;
+  --accent-ink: #c9b79d;
+  --text: #f3f2eb;
+  --text-2: #c0cbbe;
+  --border: #39473c;
+  --border-strong: #4d5e50;
+  --scrim: rgba(8, 12, 10, 0.74);
+  --shadow-float: 0 1px 0 rgba(0, 0, 0, 0.2), 0 16px 40px -20px rgba(0, 0, 0, 0.7);
+  --img-filter: saturate(0.82) brightness(0.9);
+
+  --deep-bg: #0f1612;
+  --deep-surface: #1a231d;
+}
